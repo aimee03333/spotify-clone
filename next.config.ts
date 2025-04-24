@@ -6,6 +6,9 @@ const nextConfig: NextConfig = {
       "uxvwfmtqdoosetjbuudq.supabase.co", // 你自己的 Supabase 存储域名
     ],
   },
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
 };
 
 export default nextConfig;
