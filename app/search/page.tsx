@@ -14,7 +14,8 @@ interface SearchProps {
 export const revalidate = 0;
 
 const Search = async ({searchParams}: SearchProps) =>{
-  const songs = await getSongsByTitle(searchParams.title);
+  const title = searchParams.title || "";
+  const songs = await getSongsByTitle(title);
   
   return(
     <div
