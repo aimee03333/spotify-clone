@@ -24,7 +24,7 @@ import Button from "./Button";
 
 interface HeaderProps {
     children: React.ReactNode;
-    className?: String;
+    className?: string;
 }
 const Header: React.FC<HeaderProps> = ({
     children,
