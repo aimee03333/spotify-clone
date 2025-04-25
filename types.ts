@@ -17,7 +17,7 @@ export interface UserDetails{
     full_name?: string;
     avatar_url?: string;
     billing_address?: Stripe.Address;
-    payment_method?: Stripe.PaymentMethod[Stripe.PatmentMethod.Type];
+    payment_method?: Stripe.PaymentMethod[Stripe.PaymentMethod.Type];
 }
 
 export interface Product{
@@ -26,7 +26,7 @@ export interface Product{
     name?: string;
     description?: string;
     image?: string;
-    matadata?: Stripe.Metadata;
+    metadata?: Stripe.Metadata;
 
 }
 
@@ -50,7 +50,7 @@ export interface ProductWithPrice extends Product {
     prices?: Price[];
 }
 
-export interface Subsciption {
+export interface Subscription {
     id: string;
     user_id: string;
     status?: Stripe.Subscription.Status;
@@ -66,5 +66,5 @@ export interface Subsciption {
     canceled_at?: string;
     trial_start?: string;
     trial_end?: string;
-    prices?: PromiseConstructor;
+    prices?: Price;
 }

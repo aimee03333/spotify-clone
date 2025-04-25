@@ -6,8 +6,7 @@ import { Price, Product } from "@/types";
 
 import { stripe } from "./stripe";
 import { toDateTime } from "./helpers";
-import { metadata } from "@/app/layout";
-import { Description } from "@radix-ui/react-dialog";
+
 
 export const supabaseAdmin = createClient<Database>(
   process.env.NEXT_PUBLIC_SUPABASE_URL || '',
@@ -27,6 +26,7 @@ const upsertProductRecord = async (product: Stripe.Product) => {
   const { error } = await supabaseAdmin
     .from('products')
     .upsert([productData]);
+
 
   if (error) {
     throw error;
