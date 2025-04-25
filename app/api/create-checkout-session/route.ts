@@ -22,6 +22,7 @@ export async function POST(
       uuid: user?.id || '',
       email: user?.email || '',
     });
+    const DOMAIN = "https://spotify-clone-self-alpha.vercel.app";
 
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ["card"],
@@ -39,8 +40,8 @@ export async function POST(
         trial_period_days: 14,   
         metadata
       },
-      success_url: `${getURL()}/account`,
-      cancel_url: `${getURL()}`
+      success_url: `${DOMAIN}/account`, 
+      cancel_url: `${DOMAIN}/`
 
     });
 
