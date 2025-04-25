@@ -7,7 +7,7 @@ export const getURL = () => {
     'http://localhost:3000/';
   
   url = url.includes('http') ? url: `https://${url}`;
-  url = url.charAt(url.length -1) ==='/' ? url : '${url/';
+  url = url.charAt(url.length -1) ==='/' ? url : `${url}/`;
 
   return url;
 };
