@@ -1,23 +1,18 @@
-import { Song } from "@/types";
 import getSongsByTitle from "@/actions/getSongsByTitle"
 import Header from "@/components/Header"
 import SearchInput from "@/components/SearchInput"
 import SearchContent from "./components/SearchContent"
 
-
 interface SearchProps {
-  searchParams: { 
-    title?: string; 
-  }
+    searchParams: {
+        title: string
+    }
 }
-
-
 
 export const revalidate = 0
 
-const Search: React.FC<SearchProps> = async (props) => {
-  const { title = '' } = props.searchParams;
-  const songs: Song[] = await getSongsByTitle(title)
+const Search = async ({ searchParams }: SearchProps) => {
+    const songs = await getSongsByTitle(searchParams.title)
 
     return (
         <div
