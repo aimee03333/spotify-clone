@@ -1,4 +1,3 @@
-
 import { Song } from "@/types";
 import getSongsByTitle from "@/actions/getSongsByTitle"
 import Header from "@/components/Header"
@@ -8,7 +7,7 @@ import SearchContent from "./components/SearchContent"
 
 interface SearchProps {
   searchParams: { 
-    title: string; 
+    title?: string; 
   }
 }
 
@@ -17,7 +16,7 @@ interface SearchProps {
 export const revalidate = 0
 
 const Search: React.FC<SearchProps> = async (props) => {
-  const { title } = await props.searchParams; 
+  const { title = '' } = props.searchParams;
   const songs: Song[] = await getSongsByTitle(title)
 
     return (
