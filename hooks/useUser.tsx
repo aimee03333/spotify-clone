@@ -70,7 +70,7 @@ export const MyUserContextProvider = (props: Props) => {
         accessToken,
         user,
         userDetails,
-        isLoadng: isLoadingUser || isLoadingData,
+        isLoading: isLoadingUser || isLoadingData,
         subscription
     };
 
